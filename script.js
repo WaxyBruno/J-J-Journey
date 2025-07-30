@@ -123,46 +123,7 @@ function createPerformanceChart() {
     chartObserver.observe(canvas);
 }
 
-// Generate SVG avatars for founders
-function createAvatars() {
-    // Jeff Bruno Avatar
-    const jeffAvatar = document.getElementById('jeff-avatar');
-    if (jeffAvatar) {
-        jeffAvatar.src = 'data:image/svg+xml,' + encodeURIComponent(`
-            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#667eea"/>
-                        <stop offset="100%" style="stop-color:#764ba2"/>
-                    </linearGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#bg1)"/>
-                <circle cx="50" cy="35" r="15" fill="white" opacity="0.9"/>
-                <path d="M20 75 Q50 65 80 75 Q80 85 50 85 Q20 85 20 75" fill="white" opacity="0.9"/>
-                <text x="50" y="95" text-anchor="middle" fill="white" font-size="8" font-weight="bold">JB</text>
-            </svg>
-        `);
-    }
-    
-    // Julian Wright Avatar
-    const julianAvatar = document.getElementById('julian-avatar');
-    if (julianAvatar) {
-        julianAvatar.src = 'data:image/svg+xml,' + encodeURIComponent(`
-            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#764ba2"/>
-                        <stop offset="100%" style="stop-color:#667eea"/>
-                    </linearGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#bg2)"/>
-                <circle cx="50" cy="35" r="15" fill="white" opacity="0.9"/>
-                <path d="M20 75 Q50 65 80 75 Q80 85 50 85 Q20 85 20 75" fill="white" opacity="0.9"/>
-                <text x="50" y="95" text-anchor="middle" fill="white" font-size="8" font-weight="bold">JW</text>
-            </svg>
-        `);
-    }
-}
+// Real photos are now used instead of generated avatars
 
 // Parallax scrolling effect
 function handleParallax() {
@@ -252,7 +213,6 @@ function animateCounters() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    createAvatars();
     createPerformanceChart();
     
     // Add event listeners
